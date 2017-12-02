@@ -1,0 +1,13 @@
+[package]
+name = "vector_benchmarks"
+version = "0.1.0"
+authors = ["Hugo Tunius <hugo.tunius@gmail.com>"]
+
+[dependencies]
+num="0.1.40"
+bencher="0.1.4"
+stdsimd="0.0.3"
+
+[[bench]]
+name = "vector3"
+harness = false
