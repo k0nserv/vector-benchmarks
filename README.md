@@ -2,6 +2,9 @@
 
 **Note: As show by [Cameron Hart](https://twitter.com/bitshifternz) these results are [not correct](https://bitshifter.github.io/blog/2017/12/04/rust-bench-simd/)**
 
+This branch contains an attempt to fool the optimizer.
+Use `RUSTFLAGS="-C target-cpu=native -C target-feature=+sse4.1 --emit asm" cargo bench --no-run` to get the compiled output
+
 This project contains research exploring SIMD instructions in Rust, specifically SSE, to speed up the computation of vector dot products for use in 3D graphics. From the benchmarks demonstrated here we can conclude that Rust's inability to inline functions that use SIMD makes the option drastically slower than the naive implementation. Notably even when inlining the SIMD version it is not faster than the naive option.
 
 Result on Macbook Pro 13"(mid 2012) with Intel Core i5 2.5Ghz

@@ -47,6 +47,7 @@ impl<T: Num + Copy> Vector3<T> {
 
 #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[target_feature = "+sse4.1"]
+#[inline(always)]
 pub unsafe fn dot_sse(a: f32x4, b: f32x4) -> f32 {
     vendor::_mm_dp_ps(a, b, 0x71).extract(0)
 }
